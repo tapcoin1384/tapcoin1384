@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TapCoin</title>
+
+  <!-- Bootstrap 5.0.1 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+   <style>
+    /* Logo size increased by 20% */
+    .tc-logo {
+      height: 80px; /* adjust from original (e.g. 50px) to 60px */
+      width: auto;
+    }
+  </style>
+
+</head>
+<body>
+
+<!-- Fixed Header -->
+<header class="tc-header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top tc-navbar">
+    <div class="container">
+       <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" >
+	<img src="images/tapcoin.jpg" alt="TapCoin" class="tc-logo me-2">
+	<span class="tc-brand-text">TapCoin</span>
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#tcMainNav"
+	      aria-controls="tcMainNav" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav -->
+      <div class="collapse navbar-collapse" id="tcMainNav">
+	<ul class="navbar-nav ms-auto align-items-lg-center">
+	  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+	  <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+	  <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+	    <a class="btn btn-primary rounded-pill px-4 tc-cta" href="#get-started">Get Started</a>
+	  </li>
+	</ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer to prevent content from hiding under fixed header -->
+  <div class="tc-nav-spacer"></div>
+</header>
+
+<!-- (Optional) Load Bootstrap JS in production.
+     Included here so the header works standalone. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Page-specific styles -->
+<style>
+  /* Basics */
+  .section-title{ color:#0f172a; }
+
+  /* Make in-page anchor jumps account for the fixed navbar height */
+  section{ scroll-margin-top: 88px; }
+
+  /* ---------- Hero (About) ---------- */
+  .tc-hero{ background:#f8fafc; padding:100px 0 120px; }
+  .tc-hero h1{ color:#0f172a; font-weight:800; line-height:1.2; }
+  .tc-hero p{ color:#475569; font-size:1.125rem; }
+  @media (max-width:767.98px){
+    .tc-hero{ padding:70px 0 90px; }
+    .tc-hero h1{ font-size:1.75rem; }
+    .tc-hero p{ font-size:1rem; }
+  }
+
+  /* ---------- Vision ---------- */
+  .tc-vision{ background:#f8fafc; }
+  .tc-vision-card{
+    background:#fff; border-radius:22px; max-width:950px; padding:70px 60px;
+    box-shadow:0 26px 60px rgba(2,8,23,.06);
+    border:1px solid rgba(15,23,42,.06);
+  }
+  .tc-vision-card h2{ color:#0f172a; }
+  .tc-vision-card .vision-text{
+    color:#475569; font-size:1.2rem; line-height:1.8; max-width:800px; margin:0 auto;
+  }
+  @media (max-width:767.98px){
+    .tc-vision-card{ padding:50px 25px; }
+    .tc-vision-card .vision-text{ font-size:1.05rem; }
+  }
+
+  /* ---------- Core Advantages (Features) ---------- */
+  .tc-adv{ background:#f8fafc; }
+  .tc-adv-card{
+    background:#fff; border-radius:22px; padding:28px;
+    box-shadow:0 26px 60px rgba(2,8,23,.06);
+    border:1px solid rgba(15,23,42,.06);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .tc-adv-card:hover{ transform: translateY(-2px); box-shadow:0 32px 70px rgba(2,8,23,.08); }
+  .tc-adv-head{ display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+  .tc-adv-emoji{ font-size:1.35rem; width:28px; display:inline-flex; justify-content:center; }
+  .tc-adv-text{ color:#475569; margin:0; }
+  .tc-adv-list{ margin:6px 0 0 1.2rem; color:#475569; }
+  .tc-adv-list li{ margin:4px 0; }
+
+  /* ---------- Businesses & Developers ---------- */
+  .tc-biz{ background:#1f57b6; }
+  .tc-biz h2{ color:#fff; }
+  .tc-biz-card{
+    background:rgba(255,255,255,0.15);
+    border-radius:18px;
+    padding:30px;
+    color:#fff;
+    text-align:center;
+    transition: background .2s ease;
+  }
+  .tc-biz-card:hover{ background:rgba(255,255,255,0.25); }
+  .tc-biz-card h5{ font-weight:700; margin-bottom:12px; color:#fff; }
+  .tc-biz-card p{ margin:0; font-size:1.05rem; line-height:1.6; }
+
+  /* ---------- CTA Band: Get Started ---------- */
+  .tc-cta-band{
+    background:#1f57b6; color:#fff; text-align:center; padding:64px 0;
+  }
+  .tc-cta-band h2{ color:#fff; font-weight:800; margin-bottom:14px; }
+  .tc-cta-band p{
+    color:#ffffff; opacity:.95; max-width:980px; margin:0 auto;
+    font-size:1.2rem; line-height:1.7;
+  }
+  @media (max-width:767.98px){
+    .tc-cta-band{ padding:48px 0; }
+    .tc-cta-band h2{ font-size:1.6rem; }
+    .tc-cta-band p{ font-size:1.05rem; }
+  }
+
+  /* ---------- Feature trio (Invest / Security / Legal) ---------- */
+  .feature-section{ padding:60px 0; background-color:#f6f9fc; }
+  .feature-card{
+    background:#fff; border-radius:15px; box-shadow:0 6px 18px rgba(0,0,0,.08);
+    padding:30px; height:100%; transition: transform .2s ease;
+  }
+  .feature-card:hover{ transform: translateY(-5px); }
+  .feature-card h5{ font-weight:700; margin-bottom:15px; }
+  .feature-card p{ font-size:16px; line-height:1.6; margin:0; }
+</style>
+
+<!-- Hero Section (About target) -->
+<section id="about" class="tc-hero d-flex align-items-center text-center text-dark">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-3">
+      Redefining Digital Payments with Seamless Tapping
+    </h1>
+    <p class="lead mx-auto" style="max-width: 760px;">
+      TapCoin is a pioneering cryptocurrency built on advanced blockchain technology,
+      dedicated to transforming everyday transactions. Combining speed, security, and
+      simplicity, TapCoin enables users to perform instant digital payments with just a tap,
+      making it the ideal solution for the modern financial landscape.
+    </p>
+  </div>
+</section>
+
+<!-- Our Vision Section -->
+<section class="tc-vision py-5">
+  <div class="container">
+    <div class="tc-vision-card mx-auto text-center">
+      <h2 class="fw-bold mb-4">Our Vision</h2>
+      <p class="vision-text mb-0">
+	To create a universally accessible digital currency that empowers individuals
+	and businesses to transact effortlessly, securely, and transparently—
+	anytime, anywhere.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Core Advantages (Features target) -->
+<section id="features" class="tc-adv py-5">
+  <div class="container">
+    <h2 class="section-title text-center fw-bold mb-4">Core Advantages</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-xl-4">
+	<div class="tc-adv-card h-100">
+	  <div class="tc-adv-head"><span class="tc-adv-emoji"></span><h5 class="mb-0 fw-bold">Instant Payments</h5></div>
+	  <p class="tc-adv-text">Transactions occur in real-time, eliminating delays.</p>
+	</div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+	<div class="tc-adv-card h-100">
+	  <div class="tc-adv-head"><span class="tc-adv-emoji"></span><h5 class="mb-0 fw-bold">Minimal Fees</h5></div>
+	  <p class="tc-adv-text">Keep more value with ultra-low transaction costs.</p>
+	</div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+	<div class="tc-adv-card h-100">
+	  <div class="tc-adv-head"><span class="tc-adv-emoji">🔒</span><h5 class="mb-0 fw-bold">State-of-the-Art Security</h5></div>
+	  <p class="tc-adv-text">Leveraging blockchain encryption for maximum safety.</p>
+	</div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+	<div class="tc-adv-card h-100">
+	  <div class="tc-adv-head"><span class="tc-adv-emoji">🌐</span><h5 class="mb-0 fw-bold">Decentralized Network</h5></div>
+	  <p class="tc-adv-text">No single point of failure, ensuring resilience and trust.</p>
+	</div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+	<div class="tc-adv-card h-100">
+	  <div class="tc-adv-head"><span class="tc-adv-emoji"></span><h5 class="mb-0 fw-bold">User-Centric Design</h5></div>
+	  <p class="tc-adv-text">Intuitive interfaces for both newcomers and experts.</p>
+	</div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+	<div class="tc-adv-card h-100">
+	  <div class="tc-adv-head"><span class="tc-adv-emoji">🚀</span><h5 class="mb-0 fw-bold">Why TapCoin?</h5></div>
+	  <ul class="tc-adv-list mb-0">
+	    <li>Global Reach</li><li>Scalability</li><li>Interoperability</li><li>Sustainable Growth</li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- For Businesses & Developers -->
+<section class="tc-biz py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5 text-white">For Businesses &amp; Developers</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+	<div class="tc-biz-card h-100">
+	  <h5>Merchant Solutions</h5>
+	  <p>Integrate TapCoin into your point-of-sale systems for quick, contactless payments.</p>
+	</div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+	<div class="tc-biz-card h-100">
+	  <h5>API &amp; SDK Access</h5>
+	  <p>Developers can incorporate TapCoin into apps, websites, or custom solutions with ease.</p>
+	</div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+	<div class="tc-biz-card h-100">
+	  <h5>Partner Program</h5>
+	  <p>Collaborate with us to expand TapCoin adoption globally.</p>
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Roadmap & Future Developments (Roadmap target) -->
+<section id="roadmap" class="tc-roadmap">
+  <style>
+    .tc-roadmap{
+      background-color:#ffffff;
+      padding:80px 0;
+      text-align:center;
+    }
+    .tc-roadmap h2{
+      font-size:2.2rem; font-weight:800; color:#0f172a; margin-bottom:35px;
+    }
+    .tc-roadmap img{
+      max-width:80%; height:auto; border-radius:14px; box-shadow:0 10px 28px rgba(15,23,42,.12);
+    }
+    @media(max-width:767.98px){
+      .tc-roadmap{ padding:60px 0; }
+      .tc-roadmap h2{ font-size:1.8rem; }
+      .tc-roadmap img{ max-width:100%; }
+    }
+  </style>
+  <div class="container">
+    <h2>Roadmap &amp; Future Developments</h2>
+    <img src="images/my.png" alt="Roadmap & Future Developments">
+  </div>
+</section>
+
+<!-- Get Started CTA -->
+<section id="get-started" class="tc-cta-band">
+  <div class="container">
+    <h2 class="fw-bold">Get Started with TapCoin Today</h2>
+    <p>
+      Experience the power of instant, secure, and borderless payments. Download the
+      TapCoin Wallet now and step into the future of financial technology.
+    </p>
+  </div>
+</section>
+
+<!-- Feature Section (three cards) -->
+<section class="feature-section">
+  <div class="container-fluid px-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+	<div class="feature-card">
+	  <h5>Invest in the Future</h5>
+	  <p>TapCoin is at the forefront of a financial revolution. Join our investor community to participate in upcoming token sales, staking opportunities, and exclusive benefits.</p>
+	</div>
+      </div>
+      <div class="col-md-4">
+	<div class="feature-card">
+	  <h5>Security &amp; Compliance</h5>
+	  <p>At TapCoin, security is paramount. Our blockchain infrastructure utilizes the latest cryptographic techniques, ensuring your assets are protected from threats. We adhere to international standards and regulations.</p>
+	</div>
+      </div>
+      <div class="col-md-4">
+	<div class="feature-card">
+	  <h5>Legal &amp; Privacy</h5>
+	  <p>Your privacy and security are our top priorities. Review our Privacy Policy and Terms of Service to understand how we protect your data and transactions.</p>
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Join Our Community (Community target) -->
+<section id="community" class="tc-community">
+  <style>
+    .tc-community{
+      background:#f6fafc; padding:72px 0 80px; text-align:center;
+    }
+    .tc-community h2{
+      color:#0f172a; font-weight:800; font-size:2.25rem; margin-bottom:14px;
+    }
+    .tc-community .lead{
+      color:#465a6e; font-size:1.15rem; line-height:1.85; max-width:980px; margin:0 auto 28px;
+    }
+    .tc-socials{
+      display:flex; gap:18px; justify-content:center; align-items:center; margin:10px 0 30px;
+    }
+    .tc-social{
+      width:52px; height:52px; border-radius:12px; background:#d9e2ee;
+      display:inline-flex; justify-content:center; align-items:center;
+      box-shadow:0 8px 22px rgba(2,8,23,.08);
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .tc-social img{
+      width:26px; height:26px; object-fit:contain; display:block; opacity:.85; transition:opacity .15s ease;
+    }
+    .tc-social:hover{
+      transform:translateY(-2px); box-shadow:0 12px 28px rgba(2,8,23,.12); background:#cbd7e6;
+    }
+    .tc-social:hover img{ opacity:1; }
+    .tc-contacts{ margin-top:6px; color:#3b4a5b; font-size:1.05rem; line-height:2; }
+    .tc-contacts a{ color:#1f57b6; text-decoration:none; font-weight:600; }
+    .tc-contacts a:hover{ text-decoration:underline; }
+    @media (max-width:767.98px){
+      .tc-community{ padding:56px 0 64px; }
+      .tc-community h2{ font-size:1.8rem; }
+      .tc-community .lead{ font-size:1.05rem; }
+      .tc-social{ width:48px; height:48px; border-radius:10px; }
+      .tc-social img{ width:24px; height:24px; }
+      .tc-contacts{ font-size:1rem; }
+    }
+  </style>
+
+  <div class="container">
+    <h2>Join Our Community</h2>
+    <p class="lead">
+      Be part of the future of digital finance. Follow us for updates, participate in<br>
+      discussions, and share your feedback:
+    </p>
+
+    <div class="tc-socials">
+      <a class="tc-social" href="https://x.com/tapcoin84" aria-label="Twitter">
+	<img src="images/twitter.png" alt="Twitter">
+      </a>
+      <a class="tc-social" href="http://t.me/tapcoinPublic" aria-label="Telegram">
+	<img src="images/telegram.png" alt="Telegram">
+      </a>
+    </div>
+
+    <div class="tc-contacts">
+      Customer Support: <a href="mailto:support@tapcoin.in">support@tapcoin.in</a><br>
+      Investor Relations: <a href="mailto:invest@tapcoin.in">invest@tapcoin.in</a>
+    </div>
+  </div>
+</section>
+
+<footer class="tc-footer mt-auto">
+  <div class="container d-flex align-items-center justify-content-between">
+    <p class="mb-0 text-white-50">© 2025 TapCoin. All Rights Reserved.</p>
+    <a class="tc-footer-link">Contact Us</a>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 Bundle (remove if already included) -->
+<!-- Optional: Include Bootstrap JS for interactive components
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+-->
+</body>
+</html>

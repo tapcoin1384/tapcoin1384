@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TapCoin Roadmap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #3498db;
+            transform: translateX(-50%);
+        }
+        .event {
+            position: relative;
+            margin-bottom: 50px;
+            width: 100%;
+            clear: both;
+        }
+        .event:nth-child(odd) {
+            text-align: left;
+            padding-left: 50px;
+        }
+        .event:nth-child(even) {
+            text-align: right;
+            padding-right: 50px;
+        }
+        .quarter {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .description {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 350px;
+        }
+        .event:after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3498db;
+        }
+        .event:nth-child(odd):after {
+            left: -10px;
+        }
+        .event:nth-child(even):after {
+            right: -10px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-style: italic;
+            text-align: center;
+            color: #7f8c8d;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TapCoin Roadmap</h1>
+
+    <div class="timeline">
+        <div class="event">
+            <div class="quarter">Q4 2025</div>
+            <div class="description">Launch of TapCoin Mobile Wallet with biometric security features.</div>
+        </div>
+
+        <div class="event">
+            <div class="quarter">Q1 2026</div>
+            <div class="description">Strategic partnerships with major retail chains and e-commerce platforms.</div>
+        </div>
+
+        <div class="event">
+            <div class="quarter">Q2 2026</div>
+            <div class="description">Introduction of TapCoin Payment SDK for seamless developer integration.</div>
+        </div>
+
+        <div class="event">
+            <div class="quarter">Q3 2026</div>
+            <div class="description">Expansion into new markets with localized support and multilingual interfaces.</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Stay tuned for continuous updates and new features.
+    </div>
+</body>
+</html>
